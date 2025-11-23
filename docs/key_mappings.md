@@ -5,21 +5,18 @@ The configuration uses the space key as the leader key.
 ## Normal Mode
 - `<leader>pv`: Open file explorer in the current file's directory
 - `J`: Join lines while keeping the cursor in place
-- `<C-d>`: Scroll down half a page, keeping cursor centered
-- `<C-u>`: Scroll up half a page, keeping cursor centered
+- `<C-j>`: Scroll down half a page, keeping cursor centered
+- `<C-k>`: Scroll up half a page, keeping cursor centered
 - `n`: Search next occurrence, center view on match
 - `<leader>y`: Yank to system clipboard
 - `<leader>Y`: Yank whole line to system clipboard
 - `Q`: Disabled (no operation)
-- `<C-f>`: Open tmux sessionizer in a new tmux window (Linux only)
+- `<C-f>`: Open tmux sessionizer in a new tmux window 
 - `<leader>s`: Find and replace current word under cursor
 - `<leader>e`: Open floating diagnostic window for LSP warnings
-- `<leader>gs`: Open Git status window (Fugitive)
-- `<leader>u`: Toggle Undotree panel
-- `<leader>ch`: Open Cht.sh with a prompt for the language of the current file
 
 ## Insert Mode
-- `<C-H>`: Delete previous word (equivalent to <C-W>)
+- `<C-BS>`: Delete previous word (equivalent to <C-W>)
 
 ## Visual Mode
 - `J`: Move selected block down
@@ -32,27 +29,27 @@ The configuration uses the space key as the leader key.
 
 ## Harpoon
 - `<leader>a`: Add current file to Harpoon
-- `<C-e>`: Toggle Harpoon quick menu
-- `<C-h>`: Navigate to 1st file in Harpoon list
-- `<C-t>`: Navigate to 2nd file in Harpoon list
-- `<C-n>`: Navigate to 3rd file in Harpoon list
-- `<C-s>`: Navigate to 4th file in Harpoon list
+- `<C-t>`: Toggle Harpoon quick menu
+- `<C-a>`: Navigate to 1st file in Harpoon list
+- `<C-s>`: Navigate to 2nd file in Harpoon list
+- `<C-d>`: Navigate to 3rd file in Harpoon list
+- `<C-f>`: Navigate to 4th file in Harpoon list
 
 ## Telescope
-- `<leader>pf`: Find files in the current directory
+- `<leader>ff`: Find files in the current directory
 - `<C-p>`: Find files tracked by Git
-- `<leader>ps`: Search for a string in the current directory
+- `<leader>fs`: Search for a string in the current directory
 
 ## LSP
 - `gd`: Go to definition
 - `K`: Hover information
 - `<leader>vws`: Workspace symbol search
-- `<leader>vd`: Open diagnostic float
+- `<leader>d`: Open diagnostic float
 - `[d`: Go to next diagnostic
 - `]d`: Go to previous diagnostic
 - `<leader>vca`: Code action
-- `<leader>vrr`: References
-- `<leader>vrn`: Rename
+- `<leader>gr`: References
+- `<leader>r`: Rename
 - `<C-h>` (in insert mode): Signature help
 
 ## Autocompletion (nvim-cmp)

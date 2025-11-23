@@ -1,2 +1,1 @@
-require("kaimac")
-
+require("config")

@@ -36,7 +36,5 @@ This configuration includes various settings to Neovim editing experience closer
 ## Automatic Behaviors
 
 ### Auto-formatting
-- The configuration uses Prettier to automatically format files on save.
-- This applies to all file types (`*` pattern).
-
-These settings are designed to provide a fairly unintrusive but robust editing environment. They can be further customized by modifying the `set.lua` file in the `lua/kaimac/` directory.
+- The configuration uses Conform to automatically format files on save.
+- Each filetype that I use has a different formatter.

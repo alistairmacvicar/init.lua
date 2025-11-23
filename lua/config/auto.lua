@@ -1,7 +1,9 @@
--- Auto-format with Prettier on save
+-- Auto-format with Conform on save
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*",
-  command = "Prettier"
+    callback = function(args)
+    require("conform").format({ bufnr = args.buf })
+  end,
 })
 
 -- Auto enter a newly created directory

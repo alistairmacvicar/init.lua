@@ -1,4 +1,4 @@
--- Line numbers and relateive numbering
+-- Line numbers and relative numbering
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
@@ -16,7 +16,7 @@ vim.opt.smartindent = true
 -- no text wrapping
 vim.opt.wrap = false
 
--- Lets undotree take over instead of vim's (might need changed on windows)
+-- Lets undotree take over instead of vim's
 vim.opt.swapfile = false
 vim.opt.backup = false
 -- vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"

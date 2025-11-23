@@ -1,16 +1,6 @@
 # Language Server Protocol (LSP) Configuration
 
-I'm using lsp-zero with Mason for managing language servers.
-
-## Installed Language Servers
-
-The following language servers are installed and configured:
-
-- TypeScript (tsserver)
-- ESLint
-- Lua (lua_ls)
-
-A new language should be detected and the relevant language server installed when a different file extension is opened. Using `:Mason` is always an option to manually install any that aren't picked up.
+I'm using nvim 0.11's vim.lsp to configure everything, and just use Mason to handle the installation of servers.
 
 ## Autocompletion (nvim-cmp)
 
@@ -31,22 +21,14 @@ The following keybindings are set up for LSP functionality:
 - `gd`: Go to definition
 - `K`: Hover information
 - `<leader>vws`: Workspace symbol search
-- `<leader>vd`: Open diagnostic float
+- `<leader>d`: Open diagnostic float
 - `[d`: Go to next diagnostic
 - `]d`: Go to previous diagnostic
 - `<leader>vca`: Code action
-- `<leader>vrr`: References
-- `<leader>vrn`: Rename
+- `<leader>gr`: References
+- `<leader>r`: Rename
 - `<C-h>` (in insert mode): Signature help
 
 ## Customization
 
-To add or modify language servers, you can edit the `lsp.lua` file in the `after/plugin/` directory. You can add new servers to the `ensure_installed` table and configure them as needed.
-
-To install a new language server:
-
-1. Add the server name to the `ensure_installed` table in `lsp.lua`
-2. Run `:PackerSync` to update plugins
-3. Restart Neovim or source the `lsp.lua` file
-
-Remember to consult the documentation of individual language servers for specific configuration options.
+All configs are in `config/lsp/` on a server-by-server basis

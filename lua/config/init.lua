@@ -1,0 +1,5 @@
+require("config.remap")
+require("config.set")
+require("config.auto")
+require("config.lazy_init")
+require("config.lsp")
