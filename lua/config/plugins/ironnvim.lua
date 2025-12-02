@@ -10,7 +10,7 @@ return {
 				-- Your repl definitions come here
 				repl_definition = {
 					sh = {
-						command = { "bash", "source", ".venv/bin/activate/" },
+						command = { "bash" },
 					},
 					python = {
 						command = { "bash", "-c", "source .venv/bin/activate && python3" },
@@ -26,8 +26,9 @@ return {
 			keymaps = {
 				send_file = "<space>na",
 				visual_send = "<space>nr",
+				send_code_block_and_move = "<space>nb",
+				send_until_cursor = "<space>nu",
 				send_line = "<space>nr",
-				send_mark = "<space>nl",
 				exit = "<space>nq",
 				clear = "<space>nc",
 			},
