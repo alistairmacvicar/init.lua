@@ -4,6 +4,7 @@ local servers = {
 	"luals",
 	"vtsls",
 	"ruff",
+	"basedpyright",
 	"eslint",
 }
 
