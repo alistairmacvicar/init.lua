@@ -1,3 +1,4 @@
+require("config.auto-venv").setup()
 require("config.remap")
 require("config.set")
 require("config.auto")

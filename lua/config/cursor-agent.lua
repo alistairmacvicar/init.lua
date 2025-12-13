@@ -12,7 +12,7 @@ function M.toggle()
 	end
 
 	if cursor_agent_buf and vim.api.nvim_buf_is_valid(cursor_agent_buf) then
-		vim.cmd("vsplit")
+		vim.cmd("rightbelow vsplit")
 		cursor_agent_win = vim.api.nvim_get_current_win()
 		vim.api.nvim_win_set_buf(cursor_agent_win, cursor_agent_buf)
 		vim.api.nvim_win_set_width(cursor_agent_win, math.floor(vim.o.columns * 0.4))
@@ -24,7 +24,7 @@ function M.toggle()
 		vim.api.nvim_set_current_win(cursor_agent_win)
 		vim.cmd("startinsert")
 	else
-		vim.cmd("vsplit")
+		vim.cmd("rightbelow vsplit")
 		cursor_agent_win = vim.api.nvim_get_current_win()
 		vim.api.nvim_win_set_width(cursor_agent_win, math.floor(vim.o.columns * 0.4))
 
@@ -64,7 +64,8 @@ local function start_file_watcher()
 
 	watch_timer = vim.loop.new_timer()
 	watch_timer:start(
-		500,
+		500, -- Initial delay
+		500, -- Repeat interval
 		vim.schedule_wrap(function()
 			for _, buf in ipairs(vim.api.nvim_list_bufs()) do
 				if buf ~= cursor_agent_buf and vim.api.nvim_buf_is_loaded(buf) then
@@ -91,6 +92,8 @@ local function stop_file_watcher()
 end
 
 function M.show_changes()
+	local result = vim.fn.systemlist("git diff --name-only HEAD")
+
 	if #result == 0 or (result[1] and result[1]:match("^fatal:")) then
 		vim.notify("No changes detected", vim.log.levels.INFO)
 		return
@@ -101,7 +104,6 @@ function M.show_changes()
 		if file ~= "" then
 			table.insert(qf_list, {
 				filename = file,
-				text = "Modified by AI",
 				lnum = 1,
 				col = 1,
 			})
@@ -126,6 +128,8 @@ function M.show_changes()
 end
 
 function M.accept_all()
+	local changed_files = vim.fn.systemlist("git diff --name-only HEAD")
+
 	if #changed_files == 0 or (changed_files[1] and changed_files[1]:match("^fatal:")) then
 		vim.notify("No changes to accept", vim.log.levels.WARN)
 		return
@@ -234,9 +238,11 @@ function M.setup()
 	vim.keymap.set("n", "<leader>aa", M.accept_all, { desc = "Accept all AI changes" })
 	vim.keymap.set("n", "<leader>ar", M.reject_all, { desc = "Reject all AI changes" })
 
+	-- File-level accept/reject
 	vim.keymap.set("n", "<leader>ay", M.accept_current, { desc = "Accept file changes" })
 	vim.keymap.set("n", "<leader>an", M.reject_current, { desc = "Reject file changes" })
 
+	-- Quickfix navigation
 	vim.keymap.set("n", "]q", "<cmd>cnext<cr>", { desc = "Next changed file" })
 	vim.keymap.set("n", "[q", "<cmd>cprev<cr>", { desc = "Previous changed file" })
 end
