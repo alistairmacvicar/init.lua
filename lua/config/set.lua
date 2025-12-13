@@ -42,6 +42,3 @@ vim.opt.colorcolumn = "80"
 
 -- sets the leader for remaps
 vim.g.mapleader = " "
-
--- adds relative line numbering in netrw as well
-vim.g.netrw_bufsettings = "noma nomod nu rnu noble nowrap ro"

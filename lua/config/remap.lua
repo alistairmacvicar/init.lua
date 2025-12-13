@@ -1,7 +1,5 @@
 vim.g.mapleader = " "
 
--- Goes to the explore menu in the directory of the file that you're in
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.api.nvim_set_keymap("i", "<C-H>", "<C-W>", { noremap = true })
 
 -- When a block of text is selected, J/K will move it around the file
