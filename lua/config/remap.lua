@@ -13,6 +13,8 @@ vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-j>", "<C-d>zz")
 vim.keymap.set("n", "<C-k>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("v", "<C-j>", "<C-d>zz")
+vim.keymap.set("v", "<C-k>", "<C-u>zz")
 
 -- when text is highlighted, pastes over it without changing the copy buffer
 vim.keymap.set("x", "<leader>p", '"_dP')
@@ -32,10 +34,3 @@ vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { noremap = true, si
 
 -- Delete whole word with backspace
 vim.keymap.set("i", "<C-BS>", "<C-W>", { noremap = true })
-
--- tmux sessionizer
-vim.keymap.set("n", "<C-t>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
-vim.keymap.set("n", "<M-a>", "<cmd>silent !tmux neww tmux-sessionizer -s 0<CR>")
-vim.keymap.set("n", "<M-s>", "<cmd>silent !tmux neww tmux-sessionizer -s 1<CR>")
-vim.keymap.set("n", "<M-d>", "<cmd>silent !tmux neww tmux-sessionizer -s 2<CR>")
-vim.keymap.set("n", "<M-f>", "<cmd>silent !tmux neww tmux-sessionizer -s 3<CR>")
