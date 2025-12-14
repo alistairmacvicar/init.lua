@@ -25,6 +25,10 @@ return {
 					api.node.open.preview()
 				end
 			end, opts("Preview File"))
+
+			-- Add half-page scroll bindings to match normal file navigation
+			vim.keymap.set("n", "<C-j>", "<C-d>zz", opts("Scroll down half page"))
+			vim.keymap.set("n", "<C-k>", "<C-u>zz", opts("Scroll up half page"))
 		end
 
 		require("nvim-tree").setup({

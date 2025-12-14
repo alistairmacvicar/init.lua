@@ -6,6 +6,10 @@ vim.api.nvim_set_keymap("i", "<C-H>", "<C-W>", { noremap = true })
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
+-- Indent/unindent in visual mode and keep selection
+vim.keymap.set("v", "<Tab>", ">gv")
+vim.keymap.set("v", "<S-Tab>", "<gv")
+
 -- When jumping around the file, the cursor will stay in the middle of the screen
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-j>", "<C-d>zz")
